@@ -12,7 +12,7 @@ public class TimeEntryController {
     TimeEntryRepository timeEntryRepository;
 
     public TimeEntryController() {
-        timeEntryRepository = new TimeEntryRepositoryImpl();
+        timeEntryRepository = new InMemoryTimeEntryRepository();
     }
 
     public TimeEntryController(TimeEntryRepository repo) {
@@ -53,10 +53,7 @@ public class TimeEntryController {
 
     @DeleteMapping("/time-entries/{id}")
     public ResponseEntity<Void> delete(@PathVariable long id) {
-        Boolean result = timeEntryRepository.delete(id);
-        if(result)
-            return ResponseEntity.ok().build();
-        else
-            return ResponseEntity.noContent().build();
+        timeEntryRepository.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
