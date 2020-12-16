@@ -6,5 +6,6 @@ applications:
     env:
       WELCOME_MESSAGE: Hello from the review environment
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+      "SPRING_DATASOURCE_URL": "jdbc:mysql://9ad24c22-29cc-44d9-a389-5bf3797eb26b.mysql.service.internal:3306/tracker_dev?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
     services:
       - tracker-database
