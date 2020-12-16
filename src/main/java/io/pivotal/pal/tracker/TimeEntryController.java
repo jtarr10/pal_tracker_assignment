@@ -1,8 +1,12 @@
 package io.pivotal.pal.tracker;
 
+import com.mysql.cj.jdbc.MysqlDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import io.pivotal.pal.tracker.PalTrackerApplication;
 
+import javax.sql.DataSource;
 import java.net.URI;
 import java.util.List;
 
@@ -12,7 +16,9 @@ public class TimeEntryController {
     TimeEntryRepository timeEntryRepository;
 
     public TimeEntryController() {
-        timeEntryRepository = new InMemoryTimeEntryRepository();
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
+        timeEntryRepository = PalTrackerApplication.timeEntryRepository(dataSource);
     }
 
     public TimeEntryController(TimeEntryRepository repo) {
