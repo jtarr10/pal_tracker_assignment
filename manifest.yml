@@ -7,5 +7,8 @@ applications:
       WELCOME_MESSAGE: Hello from the review environment
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
       "SPRING_DATASOURCE_URL": "jdbc:mysql://9ad24c22-29cc-44d9-a389-5bf3797eb26b.mysql.service.internal:3306/service_instance_db?user=4d476f429406437c8e035aa456e1da46\u0026password=kl06dq6jegtk65se\u0026useSSL=false"
+      "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "*"
+      "MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS": "always"
+      "MANAGEMENT_HEALTH_PROBES_ENABLED": true
     services:
       - tracker-database
