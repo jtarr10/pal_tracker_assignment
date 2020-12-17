@@ -15,12 +15,6 @@ public class TimeEntryController {
 
     TimeEntryRepository timeEntryRepository;
 
-    public TimeEntryController() {
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
-        timeEntryRepository = PalTrackerApplication.timeEntryRepository(dataSource);
-    }
-
     public TimeEntryController(TimeEntryRepository repo) {
         timeEntryRepository = repo;
     }
