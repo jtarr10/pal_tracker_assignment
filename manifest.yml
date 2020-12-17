@@ -18,3 +18,4 @@ applications:
     WELCOME_MESSAGE: Hello from the review environment
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 100 } }'
     MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: 'info,health,palTrackerFailure'
+    MANAGEMENT_HEALTH_PROBES_ENABLED: true
