@@ -6,8 +6,8 @@ applications:
     env:
       WELCOME_MESSAGE: Hello from the review environment
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
-      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "*",
-      "MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS": "always",
-      "MANAGEMENT_HEALTH_PROBES_ENABLED": true
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: '*',
+      MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS: 'always',
+      MANAGEMENT_HEALTH_PROBES_ENABLED: true
     services:
       - tracker-database
